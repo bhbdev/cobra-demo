@@ -1,0 +1,198 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.min.css';
+
+body {
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  background: #f4f4f4;
+}
+
+.header {
+  background: #fff;
+}
+.wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.topnavbar {
+  padding: .75rem 1rem .8rem;
+}
+
+.topnav {
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  
+  button {
+    font-size: 16px;
+    color: #474646;
+    background: #fff;
+    padding: .55rem 1.75rem !important;
+    &:first-child {
+      border-right: 1px solid #d6d6d6;
+      &:hover {
+        background: #f8f8f8;
+        border-color: #f8f8f8;
+        border-right: 1px solid #d6d6d6;
+        padding-right: 1.40rem;
+      }
+    }
+    &:last-child {
+      color: #909090;
+      border-left: 1px solid #d6d6d6;
+      &:hover {
+        background: #f8f8f8;
+        border-color: #f8f8f8;
+        border-left: 1px solid #d6d6d6;
+      }
+    }
+  }
+  
+}
+
+
+.banner {
+  background: #6eccc4;
+  color: #95e8e1;
+  text-align: center;
+  padding: 7rem 2rem;
+  border-radius: 0;
+  max-height: 263px;
+  margin-bottom: 3rem;
+
+  p {
+    font-size: 120px;
+    line-height: 23px;
+  }
+}
+
+
+.intro {
+  box-sizing: padding-box;
+  padding: 1rem;
+  margin: 0;
+  min-width: 292px;
+  max-width: 292px;
+  color: #474646;
+  h3 {
+    font-family: 'Adelle';
+    font-size: 20px;
+    line-height: 36px;
+    margin-left: -.25rem;
+  }
+  .check-circle {
+    padding: 0;
+    margin: 2em 0em 1em .33em;
+    li {
+      position: relative;
+      list-style: none;
+      padding-left: 1.8rem;
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 2rem;
+
+      &:before {
+        content: "\f058";
+        font-family: 'FontAwesome';
+        font-size: 2rem;
+        position: absolute;
+        top: .5rem;
+        left: -1rem;
+        color: #e57c7a;
+      }
+    }
+  }
+  xborder-left: 1px solid red;
+}
+
+.content {
+  border-left: 2px solid #d6d6d6;
+  padding: 1rem 0;
+  color: #474646;  
+  xborder-right: 1px solid red;
+}
+
+.details-form {
+  .form-content {
+    margin-left: 0rem;
+    xmargin: 0 auto;
+    padding: 0 1rem 0 2.25rem;
+    h2 {
+      font-family: 'Adelle';
+      font-size: 30px;
+    }
+    .form-group {
+      border-bottom: 1px solid #d6d6d6;
+      padding: 1rem 0 2rem;
+      &.no-border {
+        border: 0;
+      }
+      label {
+        font-size: 16px;
+        line-height: 22px;
+      }
+      ::placeholder {
+        color: #787878;
+      }
+      input, select {
+        font-size: 16px;
+      }
+    }
+    .form-check {
+      margin-top: 1rem;
+    }
+  }
+  .form-buttons {
+    border-top: 1px solid #d6d6d6;
+    padding: 2rem 0;
+    text-align: right;
+    button {
+      text-align: center;
+      font-size: 16px;
+      line-height:26px;
+      border: 1px solid #d6d6d6;
+      padding: .5rem 1rem;
+      
+      .fa { 
+        font-weight: bold; 
+        font-size:28px; 
+        line-height:24px; 
+        vertical-align: top;
+      }
+      
+      &.btn-back {
+        background: #e1e1e1;
+        color: #8f8f8f;
+        padding-right: 2rem;
+        margin-right: .25rem;
+        .fa { margin-left: .5rem; margin-right: .75rem; }
+        &:hover {
+          background: #d8d8d8;
+          xcolor: #474646;
+        }
+      }
+      &.btn-forward {
+        background: #5795f3;
+        color: #fff;
+        padding-left: 2rem;
+        .fa { margin-left: .75rem; margin-right: .5rem; }
+        &:hover {
+          background: #528ce5;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:576px) {
+  .details-form {
+    
+    .form-content {
+      margin: 0;
+    }
+    .form-buttons {
+      text-align:center;
+    }
+  }
+}
+

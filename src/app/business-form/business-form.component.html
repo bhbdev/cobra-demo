@@ -1,0 +1,38 @@
+
+        <form action="" class="details-form">
+          <div class="form-content">
+            <h2>Enter your business details in the form below</h2>
+          
+            <div class="form-group">
+              <label for="ff1">Enter your business name:</label>
+              <input [(ngModel)]="business.name" class="form-control form-control-lg" type="text" name="business_name" id="ff1" placeholder="{{business.name}}" />
+            </div>
+            <div class="form-group">
+              <label for="ff2">Add a logo url:</label>
+              <input [(ngModel)]="business.logo" class="form-control form-control-lg" type="text" name="logo_url" id="ff2" placeholder="{{business.logo}}" />
+              <br>
+              OR
+              <br>
+              <div class="form-check">
+                <input class="form-check-input form-control-lg" type="checkbox" name="use_default_logo" id="ff3" /> 
+                <label class="form-check-label" for="ff3">use default logo</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="ff4">Number of opt-in users per day:</label>
+              <input class="form-control form-control-lg" type="text" name="optins_per_day" id="ff4" placeholder="Opt-ins/Day" />
+            </div>
+            <div class="form-group no-border">
+              <label for="ff5">Select a sample newsletter:</label>
+              <select  class="form-control form-control-lg" name="newsletter" id="ff5">
+                <option value="">Bibleverses</option>
+              </select>
+            </div>
+          
+          </div>
+          <div class="form-buttons">
+            <button type="button" class="btn btn-default btn-back"><i class="fa fa-angle-left"></i> Backward</button>
+            <button type="button" class="btn btn-primary btn-forward">Forward <i class="fa fa-angle-right"></i></button>
+          </div>
+        </form>
+        
