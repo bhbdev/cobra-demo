@@ -7,11 +7,13 @@ import { AppBootstrapModule } from './app-bootstrap/app-bootstrap.module';
 
 import { AppComponent } from './app.component';
 import { BusinessFormComponent } from './business-form/business-form.component';
+//import { CobraWidgetComponent } from './cobra-widget/cobra-widget.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BusinessFormComponent
+//    ,CobraWidgetComponent
   ],
   imports: [
     BrowserModule,

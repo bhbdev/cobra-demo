@@ -1,11 +1,14 @@
 
-        <form action="" class="details-form">
+       <div [hidden]="submitted">
+
+        <form (ngSubmit)="onForward()" #businessForm="ngForm" class="details-form">
           <div class="form-content">
             <h2>Enter your business details in the form below</h2>
           
             <div class="form-group">
               <label for="ff1">Enter your business name:</label>
-              <input [(ngModel)]="business.name" class="form-control form-control-lg" type="text" name="business_name" id="ff1" placeholder="{{business.name}}" />
+              <input [(ngModel)]="business.name" class="form-control form-control-lg" type="text" name="business_name" id="ff1" required placeholder="{{business.name}}" />
+
             </div>
             <div class="form-group">
               <label for="ff2">Add a logo url:</label>
@@ -14,25 +17,38 @@
               OR
               <br>
               <div class="form-check">
-                <input class="form-check-input form-control-lg" type="checkbox" name="use_default_logo" id="ff3" /> 
+                <input [(ngModel)]="business.use_default_logo" class="form-check-input form-control-lg" type="checkbox" name="use_default_logo" id="ff3" value="true" /> 
                 <label class="form-check-label" for="ff3">use default logo</label>
               </div>
             </div>
             <div class="form-group">
               <label for="ff4">Number of opt-in users per day:</label>
-              <input class="form-control form-control-lg" type="text" name="optins_per_day" id="ff4" placeholder="Opt-ins/Day" />
+              <input [(ngModel)]="business.optins_per_day" class="form-control form-control-lg" type="text" name="optins_per_day" id="ff4" placeholder="Opt-ins/Day" />
             </div>
             <div class="form-group no-border">
               <label for="ff5">Select a sample newsletter:</label>
-              <select  class="form-control form-control-lg" name="newsletter" id="ff5">
-                <option value="">Bibleverses</option>
+              <select [(ngModel)]="business.newsletter" class="form-control form-control-lg" name="newsletter" id="ff5">
+                <option *ngFor="let ezine of newsletters" [value]="ezine">{{ezine}}</option>
               </select>
             </div>
           
           </div>
           <div class="form-buttons">
             <button type="button" class="btn btn-default btn-back"><i class="fa fa-angle-left"></i> Backward</button>
-            <button type="button" class="btn btn-primary btn-forward">Forward <i class="fa fa-angle-right"></i></button>
+            <button type="submit" class="btn btn-primary btn-forward" [disabled]="!businessForm.valid">Forward <i class="fa fa-angle-right"></i></button>
           </div>
         </form>
         
+        
+        <!-- <div style="position:static;bottom: 0; left: 0; width: 100%; border: 1px solid #000; background:#fff;padding: 1rem;">
+            Name: {{business.name}}<br>
+            Logo URL: {{business.logo}}<br>
+            Use Default Logo: {{business.use_default_logo}}<br>
+            Opt-ins Per Day: {{business.optins_per_day}}<br>
+            Newsletter: {{business.newsletter}}
+        </div> -->
+        
+        <!-- <app-cobra-widget [business]="business"></app-cobra-widget> -->
+        </div>
+        
+         {{diagnostic}}

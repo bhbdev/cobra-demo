@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Business } from '../business';
 
 @Component({
@@ -6,17 +6,27 @@ import { Business } from '../business';
   templateUrl: './business-form.component.html',
   styleUrls: ['./business-form.component.less']
 })
-export class BusinessFormComponent implements OnInit {
+export class BusinessFormComponent {
 
-  business: Business = {
-    id: 1,
-    name: 'Brand Name',
-    logo: 'http://image.url'
-  };
+//  Business = {
+//    id: 1,
+//    name: 'Brand Name',
+//    logo: 'http://image.url',
+//    use_default_logo: false,
+//    optins_per_day: null,
+//    newsletter: null
+//  };
 
-  constructor() { }
+  newsletters = ['bibleverses','recipes','travel','politics'];
 
-  ngOnInit() {
-  }
+  business = new Business(1, '', '', false, null, null);
+  
+  submitted = false;
+  
+
+  onForward() { this.submitted = true; }
+  
+  
+  get diagnostic() { return JSON.stringify(this.business); }
 
 }
