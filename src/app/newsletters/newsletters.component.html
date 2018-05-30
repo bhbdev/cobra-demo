@@ -4,14 +4,16 @@
         
         <div class="form-content">
             <h2>Sample Newsletter</h2>
-
+              
+            <b>Log: </b>
+            <pre>{{diagnostic}}</pre>
             
         </div>
         <br>
         <br>
         <div class="form-buttons">
-          <button type="button" class="btn btn-default btn-back"><i class="fa fa-angle-left"></i> Backward</button>
-          <button type="submit" class="btn btn-primary btn-forward" [disabled]="!businessForm.valid">Forward <i class="fa fa-angle-right"></i></button>
+          <button type="button" (click)="onBackward()" class="btn btn-default btn-back"><i class="fa fa-angle-left"></i> Backward</button>
+          <button type="submit" (click)="onForward()" class="btn btn-primary btn-forward">Forward <i class="fa fa-angle-right"></i></button>
         </div>
         
       </div>

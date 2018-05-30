@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BusinessService } from '../business.service';
 
 @Component({
@@ -10,12 +11,18 @@ export class WidgetsComponent implements OnInit {
 
   public business;
   
-  constructor(private _data: BusinessService) { 
-    console.log(JSON.stringify(this._data.business,null," "));
-  }
+  constructor(private router: Router, private _data: BusinessService) { }
 
   ngOnInit() {
-    this.business = this._data.business;
+    this.business = this._data.getBusiness();
+  }
+  
+  onBackward() {
+    this.router.navigate(['']);
+  }
+  
+  onForward() { 
+    this.router.navigate(['newsletters']);
   }
   
   get diagnostic() { return JSON.stringify(this.business,null," "); }

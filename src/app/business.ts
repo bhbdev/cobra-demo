@@ -1,7 +1,6 @@
 export class Business {
   
   constructor(
-    public id: number,
     public name: string,
     public logo: string,
     public optins_per_day: number,
