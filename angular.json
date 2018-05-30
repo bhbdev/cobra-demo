@@ -55,7 +55,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "cobra-demo:build",
-            "host": "orion"
+            "host": "bhb"
           },
           "configurations": {
             "production": {

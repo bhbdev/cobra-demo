@@ -2,25 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { AppBootstrapModule } from './app-bootstrap/app-bootstrap.module';
-
-
 import { AppComponent } from './app.component';
-import { BusinessFormComponent } from './business-form/business-form.component';
-//import { CobraWidgetComponent } from './cobra-widget/cobra-widget.component';
+import { AppBootstrapModule } from './app-bootstrap/app-bootstrap.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { BusinessService } from './business.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BusinessFormComponent
-//    ,CobraWidgetComponent
+    routingComponents
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppBootstrapModule
+    AppBootstrapModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [BusinessService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

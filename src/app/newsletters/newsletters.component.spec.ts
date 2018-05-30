@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CobraWidgetComponent } from './cobra-widget.component';
+import { NewslettersComponent } from './newsletters.component';
 
-describe('CobraWidgetComponent', () => {
-  let component: CobraWidgetComponent;
-  let fixture: ComponentFixture<CobraWidgetComponent>;
+describe('NewslettersComponent', () => {
+  let component: NewslettersComponent;
+  let fixture: ComponentFixture<NewslettersComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CobraWidgetComponent ]
+      declarations: [ NewslettersComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CobraWidgetComponent);
+    fixture = TestBed.createComponent(NewslettersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
