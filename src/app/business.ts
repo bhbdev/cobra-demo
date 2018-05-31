@@ -4,6 +4,7 @@ export class Business {
     public logo?: string,
     public optins_per_day?: number,
     public newsletter?: number,
+    public ezine?: Newsletter,
     public use_default_logo?: boolean,
   ){ }  
 }

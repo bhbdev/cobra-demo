@@ -10,11 +10,21 @@ import { BusinessService } from '../business.service';
 export class NewslettersComponent implements OnInit {
 
   public business;
+  public newsletter;
+  public newsletters;
   
   constructor(private router: Router, private _data: BusinessService) { }
 
   ngOnInit() {
     this.business = this._data.getBusiness();
+    this.newsletter = this._data.getNewsletter(this.business.newsletter);
+    this.newsletters = this._data.getNewsletters();
+  }
+  
+  setEzine() {
+    this._data.saveBusiness(this.business);
+    this.business = this._data.getBusiness();
+    this.newsletter = this._data.getNewsletter(this.business.newsletter)
   }
   
   onBackward() {
@@ -25,6 +35,10 @@ export class NewslettersComponent implements OnInit {
     this.router.navigate(['']); //TODO determine final page?
   }
 
-  get diagnostic() { return JSON.stringify(this.business,null," "); }
+  get diagnostic() { 
+    this.business.ezine = this.newsletter;
+    return JSON.stringify(this.business,null," "); 
+  
+  }
 
 }

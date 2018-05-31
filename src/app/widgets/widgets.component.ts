@@ -10,15 +10,13 @@ import { BusinessService } from '../business.service';
 export class WidgetsComponent implements OnInit {
 
   public business;
+  public newsletter;
   
   constructor(private router: Router, private _data: BusinessService) { }
 
   ngOnInit() {
     this.business = this._data.getBusiness();
-    
-  //  newsletter = this._data.getNewsletter(this.business.newsletter);
-    console.log('newsletter: ' + this.business.newsletter)
-    console.log(this._data.getNewsletter(this.business.newsletter))
+    this.newsletter = this._data.getNewsletter(this.business.newsletter);
   }
   
   onBackward() {

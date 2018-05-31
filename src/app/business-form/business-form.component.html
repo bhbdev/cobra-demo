@@ -43,7 +43,7 @@
             </div>
             <div class="form-group no-border">
               <label for="ff5">Select a sample newsletter:</label>
-              <select [(ngModel)]="business.newsletter" class="form-control form-control-lg" name="newsletter" id="ff5">
+              <select [(ngModel)]="business.newsletter" (change)="setEzine()" class="form-control form-control-lg" name="newsletter" id="ff5" required>
                 <option *ngFor="let ezine of newsletters" [value]="ezine.id">{{ezine.title}}</option>
               </select>
             </div>
