@@ -1,6 +1,6 @@
 import { Component,OnInit,OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { Business } from '../business';
+import { Business, Newsletters } from '../business';
 import { BusinessService } from '../business.service';
 
 @Component({
@@ -14,25 +14,23 @@ export class BusinessFormComponent implements OnInit, OnDestroy {
   business: Business;
   navSubscription;
   submitted = false;
-  newsletters = ['bibleverses','recipes','travel','politics'];
-
-  
+  newsletters = Newsletters; //'bibleverses','recipes','travel','politics'
+ 
   
   constructor(private router: Router, private _data: BusinessService) { 
     this.business = this._data.getBusiness();
     
-    this.navSubscription = this.router.events.subscribe((evt:any) => {
-      
+    this.navSubscription = this.router.events.subscribe((evt:any) => {  
       if (evt instanceof NavigationEnd) {
-        this.initializeBusiness();
+        if (!this._data.hasBusiness())
+          this.initializeBusiness();
       }
     });
     
   }
 
   initializeBusiness() {
-    this._data.newBusiness();
-    this.business = this._data.getBusiness();
+    this.business = this._data.newBusiness();
   }
 
   onForward() { 
@@ -48,8 +46,7 @@ export class BusinessFormComponent implements OnInit, OnDestroy {
     if (this._data.hasBusiness()) {
       this.business = this._data.getBusiness();
     } else {
-      this._data.newBusiness();
-      this.business = this._data.getBusiness();
+      this.business = this._data.newBusiness();
     }
   }
 

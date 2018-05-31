@@ -197,9 +197,12 @@ body {
     padding: .5rem;
     text-align: center;
     .widget-logo {
-      width: 310px;
+      display: inline-block;
+      line-height:77px;
+      width: auto;
+      max-width: 310px;
       height: 77px;
-      background:#e57c7a;
+      xbackground:#e57c7a;
       color:#f7b6b5;
       margin: 0 auto .25rem;
     }
@@ -238,7 +241,7 @@ body {
       margin: 0 auto;
       padding: 0;
       .widget-logo {
-        width: 100%;
+        width: auto;
         height: 66px;
       }
       .widget-title {
@@ -247,9 +250,11 @@ body {
       }
       .widget-copy {
         font-size: 13px;
+        padding: 0 .25rem;
       }
       .widget-subbox {
         input {
+          font-size: 16px;
           max-width: 10rem;
         }
       }

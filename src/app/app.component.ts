@@ -12,6 +12,9 @@ export class AppComponent {
   
   constructor(private router: Router, private _data: BusinessService) {}
   
+  onActivate(event) {
+    window.scrollTo(0,0);
+  }
   
   resetWizard() {
     if (confirm('Are you sure you wish to reset the wizard?')) {

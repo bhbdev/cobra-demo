@@ -15,6 +15,10 @@ export class WidgetsComponent implements OnInit {
 
   ngOnInit() {
     this.business = this._data.getBusiness();
+    
+  //  newsletter = this._data.getNewsletter(this.business.newsletter);
+    console.log('newsletter: ' + this.business.newsletter)
+    console.log(this._data.getNewsletter(this.business.newsletter))
   }
   
   onBackward() {

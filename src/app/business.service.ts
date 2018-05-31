@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 //import { LocalStorage } from '@ngx-pwa/local-storage';
-import { Business } from './business';
+import { Business,Newsletters } from './business';
 
 @Injectable()
 export class BusinessService {
@@ -9,6 +9,9 @@ export class BusinessService {
   //constructor(private localStorage: LocalStorage) {}
   constructor() {}
   
+  getNewsletter(_id:number) {
+    return Newsletters.filter(newsletter => newsletter.id === _id);
+  }
   
   hasBusiness() {
     return typeof localStorage.getItem('business') != 'undefined';
@@ -17,6 +20,7 @@ export class BusinessService {
   newBusiness() {
     let business = new Business('','',null,null,false);
     this.saveBusiness(business);
+    return this.getBusiness();
   }
   
   getBusiness() {

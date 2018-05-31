@@ -25,7 +25,7 @@
 
 
 <div class="wrapper">
-  <router-outlet></router-outlet>
+  <router-outlet (activate)="onActivate($event)"></router-outlet>
   <!-- <div class="container-fluid">
     <div class="row">
       <div class="intro col-4 col-md-auto ">

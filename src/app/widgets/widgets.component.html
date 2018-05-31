@@ -21,9 +21,9 @@
             <div class="widget-example">
               <h5>Responsive design</h5>
               <div class="widget">
-                <div class="widget-logo">
-                  default-logo
-                </div>
+                <img *ngIf="business.use_default_logo" class="widget-logo" src="" alt="default logo" />
+                <img *ngIf="!business.use_default_logo" class="widget-logo" src="{{business.logo}}" alt="" />
+
                 <div class="widget-title">
                   Exclusive Content for our subscribers!
                 </div>
@@ -44,9 +44,9 @@
               <h5>300 x 250 unit</h5>
               <div class="widget widget-300x250">
                 <div class="widget">
-                  <div class="widget-logo">
-                    default-logo
-                  </div>
+                  <img *ngIf="business.use_default_logo" class="widget-logo" src="" alt="default logo" />
+                  <img *ngIf="!business.use_default_logo" class="widget-logo" src="{{business.logo}}" alt="" />
+                  
                   <div class="widget-title">
                     Exclusive Content for our subscribers!
                   </div>
