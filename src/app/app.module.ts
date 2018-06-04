@@ -4,13 +4,15 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppBootstrapModule } from './app-bootstrap/app-bootstrap.module';
-import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module'; 
 import { BusinessService } from './business.service';
+import { EzineComponent } from './ezine/ezine.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
+    EzineComponent
   ],
   imports: [
     BrowserModule,

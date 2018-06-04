@@ -1,21 +1,33 @@
   <div class="container-fluid">
     <div class="row">
-      <div class="col content">        
+      <div class="col content single-col">        
         
         <div class="form-content">
             <h2>Sample Newsletter</h2>
               
-            <div class="form-group">
+            <div class="form-group row">
+              <div class="col">
+              
               <label for="ff5">Select a sample newsletter:</label>
               <select [(ngModel)]="business.newsletter" (change)="setEzine()" class="form-control form-control-lg" name="newsletter" id="ff5">
                 <option *ngFor="let ezine of newsletters" [value]="ezine.id">{{ezine.title}}</option>
               </select>
+              
+            </div>
+            <div class="col-3"></div>
+            <div class="col" style="font-size:10px">
+              <b>Log: </b>
+              <pre>{{diagnostic}}</pre>
             </div>
               
-            <b>Log: </b>
-            <pre>{{diagnostic}}</pre>
+            </div>
+              
+            
             
         </div>
+        
+        <ezine [business]="business" [id]="newsletter.template"></ezine>
+        
         <br>
         <br>
         <div class="form-buttons">

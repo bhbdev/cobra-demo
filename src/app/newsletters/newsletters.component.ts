@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BusinessService } from '../business.service';
+import { EzineComponent } from '../ezine/ezine.component';
 
 @Component({
   selector: 'app-newsletters',
@@ -16,7 +17,12 @@ export class NewslettersComponent implements OnInit {
   constructor(private router: Router, private _data: BusinessService) { }
 
   ngOnInit() {
+    
     this.business = this._data.getBusiness();
+    if (!this.business.newsletter) {
+      this.router.navigate(['']); //go home
+      return;
+    }  
     this.newsletter = this._data.getNewsletter(this.business.newsletter);
     this.newsletters = this._data.getNewsletters();
   }

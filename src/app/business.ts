@@ -19,8 +19,8 @@ export class Newsletter {
 
 //'bibleverses','recipes','travel','politics'
 export const Newsletters: Newsletter[] = [
-  { id: 1, title: 'Bible Verses', template: 1317 },
-  { id: 2, title: 'Employment-Alerts', template: 1331 },
-  { id: 3, title: 'Comic Digest', template: 1334 },
+  { id: 1, title: 'Entertainment', template: 1317 },
+  { id: 2, title: 'Weather', template: 1331 },
+  { id: 3, title: 'Garfield', template: 1334 },
   { id: 4, title: 'Bargain Seekers', template: 1421 },
 ];

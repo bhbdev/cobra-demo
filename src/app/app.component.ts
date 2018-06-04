@@ -22,4 +22,9 @@ export class AppComponent {
       this.router.navigate(['']);
     }
   }
+  
+  goToContact() {
+    this.router.navigate(['contact']);
+  }
+  
 }

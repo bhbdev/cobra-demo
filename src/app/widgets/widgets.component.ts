@@ -16,6 +16,10 @@ export class WidgetsComponent implements OnInit {
 
   ngOnInit() {
     this.business = this._data.getBusiness();
+    if (!this.business.newsletter) {
+      this.router.navigate(['']); //go home
+      return;
+    } 
     this.newsletter = this._data.getNewsletter(this.business.newsletter);
   }
   
