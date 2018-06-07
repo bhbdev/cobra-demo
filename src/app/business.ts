@@ -21,6 +21,6 @@ export class Newsletter {
 export const Newsletters: Newsletter[] = [
   { id: 1, title: 'Entertainment', template: 1317 },
   { id: 2, title: 'Weather', template: 1331 },
-  { id: 3, title: 'Garfield', template: 1334 },
-  { id: 4, title: 'Bargain Seekers', template: 1421 },
+  { id: 3, title: 'Comic Digest', template: 1334 },
+  { id: 4, title: 'Bargain Hunters', template: 1421 },
 ];
