@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BusinessFormComponent } from './business-form/business-form.component';
 import { WidgetsComponent } from './widgets/widgets.component';
 import { NewslettersComponent } from './newsletters/newsletters.component';
+import { RevShareComponent } from './revshare/revshare.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'widgets', component: WidgetsComponent },
   { path: 'newsletters', component: NewslettersComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'revshare', component: RevShareComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -24,6 +26,7 @@ export const routingComponents = [
   BusinessFormComponent,
   WidgetsComponent,
   NewslettersComponent,
+  RevShareComponent,
   ContactComponent,
   PageNotFoundComponent
 ];

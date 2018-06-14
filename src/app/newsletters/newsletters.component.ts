@@ -38,7 +38,7 @@ export class NewslettersComponent implements OnInit {
   }
   
   onForward() { 
-    this.router.navigate(['']); //TODO determine final page?
+    this.router.navigate(['revshare']); //TODO determine final page?
   }
 
   get diagnostic() { 

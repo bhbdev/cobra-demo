@@ -1,0 +1,61 @@
+<style type="text/css">
+  table {
+    font-size:12px;background:#333
+  }
+  tr {
+    border-bottom:1px solid #333;
+  }
+  th {
+    background:#e9e9e9;
+  }
+  td {
+    background:#fff;
+    border-left: 1px solid #333;
+  }
+</style>
+<h2>Rev Share Model  <small>*actual results will vary.</small></h2>
+<table width="100%" cellpadding="4" cellspacing="1">
+  <tr>
+    <th style="width:19%;" nowrap>Month</th>
+    <th nowrap style="width:6.75%;"*ngFor="let month of months" class="text-right">{{month}}</th>
+  </tr>
+  <tr>
+    <th>Leads/Day</th>
+    <td *ngFor="let month of months" class="text-right">{{business.optins_per_day | number:0}}</td>
+  </tr>
+  <tr>
+    <th>Leads/Month</th>
+    <td *ngFor="let month of months" class="text-right">{{leadsPerMonth  | number:0}}</td>
+  </tr>
+  <tr>
+    <th>DOI Subscribers</th>
+    <td *ngFor="let month of months" class="text-right">{{(leadsPerMonth * confirmRate)  | number:0}}</td>
+  </tr>
+  <tr>
+    <th>Confirm rate</th>
+    <td *ngFor="let month of months" class="text-right">{{confirmRate*100 + '%'}}</td>
+  </tr>
+  <tr>
+    <th colspan="13"><hr /></th>
+  </tr>
+  <tr>
+    <th style="width:19%;" nowrap>Month</th>
+    <th nowrap style="width:6.75%;"*ngFor="let month of months" class="text-right">{{month}}</th>
+  </tr>
+  <tr>
+    <th>Revenue Current Month</th>
+    <td *ngFor="let month of months; index as i;" class="text-right">{{i}} {{(leadsPerMonth * confirmRate) * perUserAvg  | number:0}}</td>
+  </tr>
+  <tr *ngFor="let month of months; index as i;">
+    <th>Month - {{i+1}}</th>
+
+    <td *ngFor="let month of months; index as x;" class="text-right" ng-init="let curRevAvg = revAvg - (0.05 * i)">
+      <div *ngIf="i < x">
+       {{ ((leadsPerMonth * confirmRate) * curRevAvg) * perUserAvg  | number:0}}
+      </div>
+    </td>
+  </tr>
+</table>
+
+<br><br><br><hr>
+<pre style="font-size: 11px">{{diagnostic}}</pre>
