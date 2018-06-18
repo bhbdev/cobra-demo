@@ -1,3 +1,7 @@
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col content single-col">
+        
 <style type="text/css">
   table {
     font-size:12px;background:#333
@@ -12,50 +16,108 @@
     background:#fff;
     border-left: 1px solid #333;
   }
+  .est-revshare th, .est-revshare td {
+    background: #99dd99;
+    font-weight: bold;
+  }
 </style>
 <h2>Rev Share Model  <small>*actual results will vary.</small></h2>
+
+<div class="form-content">
+  <div class="form-group">
+    <label for="ff4">Opt-ins Per Day: </label>
+    <input [(ngModel)]="business.optins_per_day" (change)="setLeads()" class="form-control form-control-lg" type="text" name="optins_per_day" id="ff4" placeholder="Opt-ins/Day" />
+  </div>
+</div>
+
 <table width="100%" cellpadding="4" cellspacing="1">
   <tr>
-    <th style="width:19%;" nowrap>Month</th>
+    <th style="width:auto" nowrap>Month</th>
     <th nowrap style="width:6.75%;"*ngFor="let month of months" class="text-right">{{month}}</th>
+    <th style="width:6.75%;"></th>
   </tr>
   <tr>
     <th>Leads/Day</th>
     <td *ngFor="let month of months" class="text-right">{{business.optins_per_day | number:0}}</td>
+    <td></td>
   </tr>
   <tr>
     <th>Leads/Month</th>
     <td *ngFor="let month of months" class="text-right">{{leadsPerMonth  | number:0}}</td>
+    <td></td>
   </tr>
   <tr>
     <th>DOI Subscribers</th>
-    <td *ngFor="let month of months" class="text-right">{{(leadsPerMonth * confirmRate)  | number:0}}</td>
+    <td *ngFor="let month of months" class="text-right">{{DOISubscribers  | number:0}}</td>
+    <td></td>
   </tr>
   <tr>
     <th>Confirm rate</th>
     <td *ngFor="let month of months" class="text-right">{{confirmRate*100 + '%'}}</td>
+    <td></td>
   </tr>
   <tr>
-    <th colspan="13"><hr /></th>
+    <th colspan="14" style="background:#333"></th>
   </tr>
   <tr>
-    <th style="width:19%;" nowrap>Month</th>
+    <th nowrap>Month</th>
     <th nowrap style="width:6.75%;"*ngFor="let month of months" class="text-right">{{month}}</th>
+    <td></td>
   </tr>
   <tr>
     <th>Revenue Current Month</th>
-    <td *ngFor="let month of months; index as i;" class="text-right">{{i}} {{(leadsPerMonth * confirmRate) * perUserAvg  | number:0}}</td>
-  </tr>
-  <tr *ngFor="let month of months; index as i;">
-    <th>Month - {{i+1}}</th>
-
-    <td *ngFor="let month of months; index as x;" class="text-right" ng-init="let curRevAvg = revAvg - (0.05 * i)">
-      <div *ngIf="i < x">
-       {{ ((leadsPerMonth * confirmRate) * curRevAvg) * perUserAvg  | number:0}}
-      </div>
+    <td *ngFor="let month of months; index as i;" class="text-right">
+      ${{revCurrentMonth  | number:0}}
     </td>
+    <td></td>
+  </tr>
+  <ng-template ngFor let-i="index" let-revMonth [ngForOf]="revMonths">
+  <tr *ngIf="i != 0">
+    <th>Month - {{i}}</th>
+    <td *ngFor="let month of revMonth; index as x;" class="text-right">
+       <span *ngIf="month>0">$</span>{{ month | number:0}}
+    </td>
+    <td></td>
+  </tr>
+  </ng-template>
+  <tr>
+    <th>Monthly Revenue</th>
+    <td *ngFor="let total of revMonthRevenue; index as i" class="text-right">
+      ${{total | number:0}}
+    </td>
+    <td></td>
+  </tr>
+  <tr class="est-revshare">
+    <th>Estimated REV SHARE</th>
+    <td *ngFor="let total of revMonthRevenue; index as i;" class="text-right">
+      ${{ total * .5 | number:0}}
+    </td>
+    <td>
+      ${{revTotalRevenue | number:0}}
+    </td>
+  </tr>
+  <tr>
+    <td class="text-right" style="border-left: 0">50%</td>
+    <td colspan="13"></td>
+  </tr>
+  <tr>
+    <th>Revenue per user avg</th>
+    <td *ngFor="let month of months; index as x;" class="text-right">0.42</td>
+    <td></td>
   </tr>
 </table>
 
-<br><br><br><hr>
+        <br>
+        <br>
+        <div class="form-buttons">
+        <button type="button" (click)="onBackward()" class="btn btn-default btn-back"><i class="fa fa-angle-left"></i> Backward</button>
+        <button type="submit" (click)="onForward()" class="btn btn-primary btn-forward">Forward <i class="fa fa-angle-right"></i></button>
+        </div>
+
+<br><br><br><hr>Log:
 <pre style="font-size: 11px">{{diagnostic}}</pre>
+
+
+      </div>
+    </div>
+  </div>         
