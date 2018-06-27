@@ -5,6 +5,7 @@ import { BusinessFormComponent } from './business-form/business-form.component';
 import { WidgetsComponent } from './widgets/widgets.component';
 import { NewslettersComponent } from './newsletters/newsletters.component';
 import { RevShareComponent } from './revshare/revshare.component';
+import { RevshareContdComponent } from './revshare-contd/revshare-contd.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'newsletters', component: NewslettersComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'revshare', component: RevShareComponent },
+  { path: 'revshare-contd', component: RevshareContdComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -27,6 +29,7 @@ export const routingComponents = [
   WidgetsComponent,
   NewslettersComponent,
   RevShareComponent,
+  RevshareContdComponent,
   ContactComponent,
   PageNotFoundComponent
 ];

@@ -90,7 +90,7 @@ export class RevShareComponent implements OnInit {
   }
   
   onForward() { 
-    this.router.navigate(['']); //TODO determine final page?
+    this.router.navigate(['revshare-contd']); 
   }
 
   get diagnostic() { 
