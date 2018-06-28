@@ -7,8 +7,8 @@ import { BusinessService } from '../business.service';
   template: `
   <div class="container-fluid">
     <div class="row">
-      <div class="col content single-col">
-        <img src="assets/revshare-cont.png" alt="" class="img-responsive" />
+      <div class="col content single-col text-center">
+        <img src="assets/img/revshare-contd.png" alt="" class="img-fluid" />
         <br>
         <br>
         <div class="form-buttons">
@@ -16,9 +16,10 @@ import { BusinessService } from '../business.service';
         <button type="submit" (click)="onForward()" class="btn btn-primary btn-forward">Forward <i class="fa fa-angle-right"></i></button>
         </div>
 
-<br><br><br><hr>Log:
+<br><br><br><hr>
+<div class="text-left">Log:
 <pre style="font-size: 11px">{{diagnostic}}</pre>
-
+</div>
 
       </div>
     </div>
