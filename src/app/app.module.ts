@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';  // replaces previous Http service
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -17,6 +18,7 @@ import { EzineComponent } from './ezine/ezine.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppBootstrapModule,
     AppRoutingModule

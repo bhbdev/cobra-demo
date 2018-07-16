@@ -13,9 +13,9 @@ const routes: Routes = [
   { path: '', component: BusinessFormComponent, runGuardsAndResolvers: 'always' },
   { path: 'widgets', component: WidgetsComponent },
   { path: 'newsletters', component: NewslettersComponent },
-  { path: 'contact', component: ContactComponent },
   { path: 'revshare', component: RevShareComponent },
   { path: 'revshare-contd', component: RevshareContdComponent },
+  { path: 'contact', component: ContactComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

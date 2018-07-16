@@ -50,7 +50,7 @@ export class RevshareContdComponent implements OnInit {
   }
   
   onForward() { 
-    this.router.navigate(['']); 
+    this.router.navigate(['contact']); 
   }
   
   get diagnostic() { 

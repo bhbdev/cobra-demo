@@ -4,17 +4,30 @@
         
         <div class="form-content">
             <h2>Contact Us</h2>
+            
+            <p>Thank you for taking the time to review our demo.</p>
+            <p>If you would like more information, please enter your email below and we will get back to you as soon as possible. 
+              We'll also send you a link to view your personalized demo created today!</p>
               
+            
+            <div class="input-group ">
+              <input [(ngModel)]="business.email" name="business_email" type="text" class="form-control form-control-lg" placeholder="Your email address" aria-label="Your email address" aria-describedby="send-btn">
+              <div class="input-group-append">
+                <button (click)="submitLead(business);" class="btn btn-primary btn-forward" type="button" id="send-btn">Submit</button>
+              </div>
+            </div>
+            
             
             
         </div>
         
-        <br>
-        <br>
-        <div class="form-buttons">
-          <button type="submit"  class="btn btn-primary btn-forward">Send <i class="fa fa-envelope" style="font-size:1rem"></i></button>
-        </div>
         
       </div>
     </div>
-  </div>         
+  </div>    
+  
+  
+  <br><br><br><hr>
+  <div class="text-left">Log:
+  <pre style="font-size: 11px">{{diagnostic}}</pre>
+  </div>     
