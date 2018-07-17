@@ -1,5 +1,5 @@
 import { Component,OnInit,OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router,ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Business, Newsletter, Newsletters } from '../business';
 import { BusinessService } from '../business.service';
 
@@ -18,31 +18,20 @@ export class BusinessFormComponent implements OnInit, OnDestroy {
   newsletters = Newsletters; //'bibleverses','recipes','travel','politics'
  
   
-  constructor(private router: Router, private _data: BusinessService) { 
-    this.business = this._data.getBusiness();
-    
-    this.navSubscription = this.router.events.subscribe((evt:any) => {  
+  constructor(private router: Router, private route: ActivatedRoute, private _data: BusinessService) { 
+    this.initializeBusiness();
+    this.navSubscription = this.router.events.subscribe((evt:any) => {
       if (evt instanceof NavigationEnd) {
         if (!this._data.hasBusiness())
           this.initializeBusiness();
           this.business.ezine = new Newsletter(null,'',null);
       }
     });
-    
   }
   
   ngOnInit() {
-    if (this._data.hasBusiness()) {
-      this.business = this._data.getBusiness();
-    } else {
-      this.business = this._data.newBusiness();
-    }
-    this.newsletter = this._data.getNewsletter(this.business.newsletter);
-    this.newsletters = this._data.getNewsletters();
-
-    if (!this.newsletter) {
-      this.business.ezine = new Newsletter(null,'',null);
-    }
+    this.getBusiness();
+    
   }
 
   ngOnDestroy() {
@@ -50,9 +39,29 @@ export class BusinessFormComponent implements OnInit, OnDestroy {
       this.navSubscription.unsubscribe();
     }
   }
+  
+  getBusiness() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    if (!id)
+      this.initializeBusiness();
+    else
+      this._data.getLead(id).subscribe(business => {
+        this.business = business;
+        if (!this.business)
+        this.business = this._data.newBusiness();
+      
+        this.newsletter = this._data.getNewsletter(this.business.newsletter);
+        this.newsletters = this._data.getNewsletters();
+
+        if (!this.newsletter) {
+          this.business.ezine = new Newsletter(null,'',null);
+        }
+      
+      });
+  }
 
   initializeBusiness() {
-    this.business = this._data.newBusiness();
+    this.business = !this._data.hasBusiness()? this._data.newBusiness() : this._data.getBusiness();
   }
 
   setEzine() {

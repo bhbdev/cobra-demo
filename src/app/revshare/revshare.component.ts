@@ -86,11 +86,11 @@ export class RevShareComponent implements OnInit {
   }
   
   onBackward() {
-    this.router.navigate(['newsletters']);
+    this.router.navigate(['revshare']);
   }
   
   onForward() { 
-    this.router.navigate(['revshare-contd']); 
+    this.router.navigate(['summary']); 
   }
 
   get diagnostic() { 

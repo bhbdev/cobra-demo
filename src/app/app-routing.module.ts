@@ -6,6 +6,8 @@ import { WidgetsComponent } from './widgets/widgets.component';
 import { NewslettersComponent } from './newsletters/newsletters.component';
 import { RevShareComponent } from './revshare/revshare.component';
 import { RevshareContdComponent } from './revshare-contd/revshare-contd.component';
+import { SummaryComponent } from './summary/summary.component';
+
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -13,9 +15,11 @@ const routes: Routes = [
   { path: '', component: BusinessFormComponent, runGuardsAndResolvers: 'always' },
   { path: 'widgets', component: WidgetsComponent },
   { path: 'newsletters', component: NewslettersComponent },
-  { path: 'revshare', component: RevShareComponent },
-  { path: 'revshare-contd', component: RevshareContdComponent },
+  { path: 'revshare', component: RevshareContdComponent },
+  { path: 'revshare-contd', component: RevShareComponent },
+  { path: 'summary', component: SummaryComponent },
   { path: 'contact', component: ContactComponent },
+  { path: ':id', component: BusinessFormComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -30,6 +34,7 @@ export const routingComponents = [
   NewslettersComponent,
   RevShareComponent,
   RevshareContdComponent,
+  SummaryComponent,
   ContactComponent,
   PageNotFoundComponent
 ];

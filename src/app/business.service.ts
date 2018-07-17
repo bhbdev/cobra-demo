@@ -61,21 +61,21 @@ export class BusinessService {
   
   saveLead(business: Business): Observable<Business> { 
     
-    const headers = new HttpHeaders({ 
-        'Content-Type': 'application/x-www-form-urlencoded'
-        //,'Authorization': 'my-auth-token'   //< TODO implement auth security
-    });
-    
+  //   const headers = new HttpHeaders({
+//         'Content-Type': 'application/x-www-form-urlencoded'
+         //,'Authorization': 'my-auth-token'   //< TODO implement auth security
+//     });
+
     const params = new HttpParams()
       .set('cmd', 'save')
       .set('jsondata', JSON.stringify(business));
-      
+
     const options = {
-      headers,
+//      headers,
       params
     }
     
-    return this.http.post<Business>(this.businessUrl, null , options)
+    return this.http.post<Business>(this.businessUrl, null, options)
       .pipe(
         catchError(this.handleError('saveLead', business))
       );
