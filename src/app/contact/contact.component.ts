@@ -38,23 +38,4 @@ export class ContactComponent implements OnInit {
   }
   
   
-  // Observables
-  
-  submitLead(business: Business): void {
-    if (!business) { return; }
-    this._data.saveLead( business as Business)
-      .subscribe(
-      res => {
-        console.log('saveLead result:');
-        console.log(res);  
-        this.business = res['data'];
-      },
-      business => {
-        
-      }
-    )
-  }
-  
-  
-  
 }

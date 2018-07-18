@@ -11,9 +11,6 @@ export class EzineComponent implements OnInit {
   @Input() business: Business;
   @Input('id') templateId: string;
 
-  ngOnInit() {
-    //console.log(this.templateId);
-    //console.log(JSON.stringify(this.business,null," "))
-  }
+  ngOnInit() {}
 
 }

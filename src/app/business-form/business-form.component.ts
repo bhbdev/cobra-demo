@@ -65,8 +65,6 @@ export class BusinessFormComponent implements OnInit, OnDestroy {
   }
 
   setEzine() {
-   // this._data.saveBusiness(this.business);
-    //this.business = this._data.getBusiness();
     this.newsletter = this._data.getNewsletter(this.business.newsletter)
     this.business.ezine = this.newsletter;
   }

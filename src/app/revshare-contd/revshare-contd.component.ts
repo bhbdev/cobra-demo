@@ -15,12 +15,12 @@ import { BusinessService } from '../business.service';
         <button type="button" (click)="onBackward()" class="btn btn-default btn-back"><i class="fa fa-angle-left"></i> Backward</button>
         <button type="submit" (click)="onForward()" class="btn btn-primary btn-forward">Forward <i class="fa fa-angle-right"></i></button>
         </div>
-
+<!--
 <br><br><br><hr>
 <div class="text-left">Log:
 <pre style="font-size: 11px">{{diagnostic}}</pre>
 </div>
-
+-->
       </div>
     </div>
   </div>         
