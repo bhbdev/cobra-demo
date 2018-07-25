@@ -13,7 +13,8 @@ import { Business, Newsletters } from './business';
 @Injectable()
 export class BusinessService {
   
-  private businessUrl = 'https://orion.arcamax.com:2001/syspages/cobralead'; // url to JSNews api
+  //private businessUrl = 'https://orion.arcamax.com:2001/syspages/cobralead'; // url to JSNews api
+  private businessUrl = 'https://www.arcamax.com/syspages/cobralead'; // url to JSNews api
 
   constructor(
     private http:HttpClient
@@ -61,17 +62,17 @@ export class BusinessService {
   
   saveLead(business: Business): Observable<Business> { 
     
-  //   const headers = new HttpHeaders({
+//   const headers = new HttpHeaders({
 //         'Content-Type': 'application/x-www-form-urlencoded'
-         //,'Authorization': 'my-auth-token'   //< TODO implement auth security
-//     });
+//        ,'Authorization': 'my-auth-token'   //< TODO implement auth security
+//   });
 
     const params = new HttpParams()
       .set('cmd', 'save')
       .set('jsondata', JSON.stringify(business));
 
     const options = {
-//      headers,
+//    headers,
       params
     }
     
@@ -86,8 +87,6 @@ export class BusinessService {
     return (error: any): Observable<T> => {
 
       console.error(error);
-      
-      //this.log(`${operation} failed: ${error.message}`);
       
       return of(result as T);
       

@@ -2,34 +2,24 @@
     <div class="row">
       <div class="col content single-col">
         
-<style type="text/css">
-  table {
-    font-size:12px;background:#333
-  }
-  tr {
-    border-bottom:1px solid #333;
-  }
-  th {
-    background:#e9e9e9;
-  }
-  td {
-    background:#fff;
-    border-left: 1px solid #333;
-  }
-  .est-revshare th, .est-revshare td {
-    background: #99dd99;
-    font-weight: bold;
-  }
-</style>
-<h2>Rev Share Model  <small>*actual results will vary.</small></h2>
 
 <div class="form-content">
+  <h2>Rev Share Model  <small>*actual results will vary.</small></h2>
   <div class="form-group">
     <label for="ff4">Opt-ins Per Day: </label>
-    <input [(ngModel)]="business.optins_per_day" (change)="setLeads()" class="form-control form-control-lg" type="text" name="optins_per_day" id="ff4" placeholder="Opt-ins/Day" />
+    <div class="input-group">
+      <input [(ngModel)]="business.optins_per_day" (change)="setLeads()" class="form-control form-control-lg" type="text" name="optins_per_day" id="ff4" placeholder="Opt-ins/Day" />
+      <div class="input-group-append">
+        <button  class="btn btn-outline-info btn-forward" type="button" id="update-btn">Update</button>
+      </div>
+    </div>
   </div>
+  
+  
+  
 </div>
 
+<div class="revshare-table">
 <table width="100%" cellpadding="4" cellspacing="1">
   <tr>
     <th style="width:auto" nowrap>Month</th>
@@ -106,7 +96,7 @@
     <td></td>
   </tr>
 </table>
-
+</div>
         <br>
         <br>
         <div class="form-buttons">

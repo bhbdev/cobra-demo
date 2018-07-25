@@ -45,7 +45,7 @@ export class BusinessFormComponent implements OnInit, OnDestroy {
     if (!id)
       this.initializeBusiness();
     else
-      this._data.getLead(id).subscribe(business => {
+      this._data.getLead(parseInt(id.toString().replace(/^.*?-/,''))).subscribe(business => {
         this.business = business;
         if (!this.business)
         this.business = this._data.newBusiness();

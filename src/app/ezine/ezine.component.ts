@@ -9,7 +9,7 @@ import { Business } from '../business';
 export class EzineComponent implements OnInit {
 
   @Input() business: Business;
-  @Input('id') templateId: string;
+  @Input('id') templateId: number;
 
   ngOnInit() {}
 

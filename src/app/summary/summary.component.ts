@@ -51,10 +51,8 @@ export class SummaryComponent implements OnInit {
         console.log('saveLead result:');
         console.debug(res);
         this.business = res['data'];
+        this.business.id = this.business.id.replace(/^.*?-/,'');
         this._data.saveBusiness(this.business);
-      },
-      business => {
-        
       }
     )
   }
