@@ -3,25 +3,21 @@
       <div class="col content single-col">        
         
         <div class="form-content">
-            <h2>Summary</h2>
+            <h2>Thank you for viewing the COBRA demo.</h2>
             
-            <p>Thank you for taking the time to review our demo.</p>
             
             <div *ngIf="business.id==0">
-            
-            
               <p>If you would like more information, please enter your email below and we will get back to you as soon as possible. 
                 We'll also send you a link to view your personalized demo created today!</p>
               
-            
               <div class="input-group ">
                 <input [(ngModel)]="business.email" name="business_email" type="text" class="form-control form-control-lg" placeholder="Your email address" aria-label="Your email address" aria-describedby="send-btn">
                 <div class="input-group-append">
-                  <button (click)="submitLead(business);" class="btn btn-primary btn-forward" type="button" id="send-btn">Submit</button>
+                  <button (click)="submitLead(business);" class="btn btn-info btn-forward" type="button" id="send-btn">Submit</button>
                 </div>
               </div>
-            
             </div>
+            
             <div *ngIf="business.id > 0">
               <p>If you have any more questions or would like to make contact with one of our team members, give us a shout!
                 
@@ -35,6 +31,9 @@
             
             </div>
             
+            <p class="text-right pplink">
+              <a href="//cobra.arcamax.com/privacy" target="_blank" class="text-muted btn btn-sm btn-link">Privacy Policy</a>
+            </p>
         </div>
         <br>
         <br>

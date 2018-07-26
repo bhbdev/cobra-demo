@@ -70,7 +70,9 @@ export class BusinessFormComponent implements OnInit, OnDestroy {
   }
 
   onForward() { 
-    this.submitted = true; 
+    this.submitted = true;
+    if (this.business.logo == "")
+      this.business.use_default_logo = true;
     this._data.saveBusiness(this.business);
     this.router.navigate(['widgets']);
   }

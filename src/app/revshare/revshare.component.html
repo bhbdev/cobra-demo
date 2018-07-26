@@ -4,7 +4,7 @@
         
 
 <div class="form-content">
-  <h2>Rev Share Model  <small>*actual results will vary.</small></h2>
+  <h2>Rev Share Model  <small style="font-size:1rem">*actual results may vary.</small></h2>
   <div class="form-group">
     <label for="ff4">Opt-ins Per Day: </label>
     <div class="input-group">
@@ -86,7 +86,8 @@
       ${{revTotalRevenue | number:0}}
     </td>
   </tr>
-  <tr>
+
+<!--  <tr>
     <td class="text-right" style="border-left: 0">50%</td>
     <td colspan="13"></td>
   </tr>
@@ -94,14 +95,17 @@
     <th>Revenue per user avg</th>
     <td *ngFor="let month of months; index as x;" class="text-right">0.42</td>
     <td></td>
-  </tr>
+  </tr> -->
+  
 </table>
 </div>
-        <br>
+<br>
+<div class="form-content"><span style="font-size:1.05rem">Lifetime subscriber value = $1.50 ($0.21/month)</span></div>
+
         <br>
         <div class="form-buttons">
         <button type="button" (click)="onBackward()" class="btn btn-default btn-back"><i class="fa fa-angle-left"></i> Backward</button>
-        <button type="submit" (click)="onForward()" class="btn btn-primary btn-forward">Forward <i class="fa fa-angle-right"></i></button>
+        <button type="submit" (click)="onForward()" class="btn btn-info btn-forward">Forward <i class="fa fa-angle-right"></i></button>
         </div>
 
 <!-- <br><br><br><hr>
