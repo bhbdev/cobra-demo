@@ -41,7 +41,7 @@ export class BusinessFormComponent implements OnInit, OnDestroy {
   }
   
   getBusiness() {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     if (!id)
       this.initializeBusiness();
     else
